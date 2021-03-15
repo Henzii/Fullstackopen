@@ -1,0 +1,27 @@
+selain->palvelin:HTTP GET exampleapp/spa
+palvelin-->selain:HTML-sivu
+
+note over selain
+Selain käy läpi HTML-koodin ja
+huomaa että on linkitetty tyylisivu
+end note over 
+
+selain->palvelin:HTTP GET exampleapp/main.css
+palvelin-->selain:Tyylisivu main.css
+
+note over selain
+Selain käy läpi HTML-koodin ja
+huomaa että on linkitetty JavaScript tiedosto
+end note over 
+
+selain->palvelin:HTTP GET exampleapp/spa.js
+palvelin-->selain:spa.js tiedosto
+
+note over selain
+Selain suorittaa JavaSciptin joka tahtoo
+lukea tiedoston data.json
+end note over 
+
+
+selain->palvelin:HTTP GET exampleapp/data.json
+palvelin-->selain:data.json

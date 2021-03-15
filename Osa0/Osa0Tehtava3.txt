@@ -1,0 +1,20 @@
+
+
+
+note over selain
+Käyttäjän painaessa submittia,
+javascript herää henkiin
+end note
+
+note over selain
+JavaScripti pushaa tiedot sivun listauksen perään
+ja lähettää tiedot palvelimelle
+end note over 
+
+selain->palvelin:HTTP POST exampleapp/new_note_spa {content, date}
+
+note over palvelin
+Palvelin lisää tidon tietokantaan
+end note
+
+palvelin-->selain:201

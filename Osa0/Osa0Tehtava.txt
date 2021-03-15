@@ -1,0 +1,25 @@
+selain->palvelin:HTTP POST {form-data: note} exampleapps/new_note
+palvelin->selain:302 {Location:exampleapps/notes}
+
+selain->palvelin:HTTP GET examplesapps/notes
+palvelin->selain:200: HTML koodia
+
+note over selain
+Selain huomaa että HTML-koodissa on css-tyylisivu
+end note
+selain->palvelin:HTTP GET exampleapps/main.css
+palvelin->selain:200: CSS-sivu
+
+note over selain
+Selain huomaa että HTML-koodiin
+on linkitetty JavaScript-tiedosto
+end note
+selain->palvelin:HTTP GET exampleapps/main.js
+palvelin->selain:200 main.js tiedosto
+
+note over selain
+Selain suorittaa JavaSCriptin joka
+pyytää palvelimelta data.json tiedostoa.
+end note
+selain->palvelin:HTTP GET exampleapps/data.json
+palvelin->selain:200 data.json filu
