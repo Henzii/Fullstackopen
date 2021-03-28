@@ -2,8 +2,6 @@ const Notification = ({message}) => {
 
     if (message.msg === null) return null
 
-    console.log(message)
-
     if (message.type === "error") {
         return (
             <div className="errorMessage">

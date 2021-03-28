@@ -37,8 +37,8 @@ const App = () => {
         personServer.addPerson(newPerson).then(res => {
           setPersons(persons.concat(res))
           notify(`Henkilö ${newPerson.name} lisättiin!`)
-        }).catch(() => {
-          notify("Jokin meni pieleen ja henkilöä ei lisätty!", "error")
+        }).catch((errori) => {
+          notify(`Virhe! Error: ${errori.response.data.error}`, "error")
         })
     }
     setNewName('')
@@ -61,7 +61,7 @@ const App = () => {
     setNotification({msg, type})
     setTimeout( () => {
       setNotification({msg: null, type: null})
-    }, 3000)
+    }, 5000)
   }
   useEffect(() => {
       personServer.getPersons().then(res => {

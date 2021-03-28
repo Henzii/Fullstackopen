@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const pUrl = "http://localhost:3001/persons"
+const pUrl = "/persons"
 
 const getPersons = () => {
     const kysely = axios.get(pUrl)
