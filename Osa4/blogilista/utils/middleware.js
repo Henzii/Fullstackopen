@@ -21,7 +21,7 @@ const userExtractor = (req, res, next) => {
     next()
 }
 const puhuja = (req, res, next) => {
-    console.log(req.method + ' ' + req.path + '| user: ' + ( (!req.user.id) ? 'No token' : req.user.user + ' (' + req.user.id + ')' ))
+    console.log(req.method + ' ' + req.path + ' | user: ' + ( (!req.user.id) ? 'No token' : req.user.user + ' (' + req.user.id + ')' ))
     next()
 }
 const errorHandler = (error, req, res, next) => {

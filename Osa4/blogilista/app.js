@@ -9,8 +9,6 @@ const loginRouter = require('./controllers/login')
 const middleware = require('./utils/middleware')
 const config = require('./utils/config')
 
-require('dotenv').config()
-
 console.log(`Yhdistetään ${config.MONGO_URL}`)
 
 mongoose.connect(config.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
@@ -23,5 +21,13 @@ app.use(middleware.puhuja)
 app.use('/api/blogs', blogsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
+
+if (process.env.NODE_ENV === 'test') {
+    console.log('! Testrouter !')
+    const testRouter = require('./controllers/test')
+    app.use('/api/testing', testRouter)
+}
+
 app.use(middleware.errorHandler)
+
 module.exports = app
