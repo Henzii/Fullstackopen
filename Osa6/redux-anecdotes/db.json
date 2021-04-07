@@ -1,0 +1,29 @@
+{
+  "anecdotes": [
+    {
+      "content": "If it hurts, do it more often",
+      "id": 47145,
+      "votes": 37
+    },
+    {
+      "content": "Hauki on kala",
+      "votes": 13,
+      "id": 47146
+    },
+    {
+      "content": "Hauki on kalamies",
+      "votes": 13,
+      "id": 47147
+    },
+    {
+      "content": "Hauki on kala",
+      "votes": 14,
+      "id": 47148
+    },
+    {
+      "content": "Testataan filtteriä",
+      "votes": 0,
+      "id": 47149
+    }
+  ]
+}
