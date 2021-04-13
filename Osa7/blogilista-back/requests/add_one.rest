@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoicm9vdCIsImlkIjoiNjA2MDhkY2QzZTkxNWMzOTc4MTQwYmRmIiwiaWF0IjoxNjE2OTUxMDE5fQ.VLxlpv3PamB0vDa5mmunckMEuKy0VgGfj27Khhmb0Cc
+
+{
+  "title": "7. testi",
+  "author": "Esteri Tester",
+  "url": "google.com",
+  "likes": "11"
+}

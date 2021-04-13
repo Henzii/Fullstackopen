@@ -1,0 +1,30 @@
+body {
+    margin: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.error {
+    border: 2px solid red;
+    background-color: lightpink;
+    border-radius: 8px;
+    padding: 10px 20px;
+
+
+}
+.message {
+    border: 2px solid green;
+    background-color: lightgreen;
+    border-radius: 8px;
+    padding: 10px 20px;
+
+}
+
+.blogi {
+    border: 1px solid black;
+    padding: 3px 5px;
+    border-style:groove;
+    margin-bottom: 5px;
+}
+.blogi:hover {
+    background-color: lightblue;
+}
