@@ -2,16 +2,25 @@
 import { Patient } from '../types';
 import { NewPatient } from '../types';
 
-import patientsList from '../../data/patients.json';
+import patientsList from '../../data/patients';
 import { v1 as uuid } from 'uuid';
 
-const patients: Array<Patient> = patientsList as Array<Patient>;
+const patients: Array<Patient> = patientsList;
 
 const getPatients = (): Array<Patient> => {
     return patients;
 };
-
-const getPatientsNoSsn = (): Omit<Patient, 'ssn'>[] => {
+const findPatient = (id:string):Patient => {
+    const pToReturn = patientsList.find(p => p.id === id) as Patient;
+    if (!pToReturn) {
+        throw new Error('Patient not found');
+    }
+    if (!pToReturn.entries) {
+        pToReturn.entries = [];
+    }
+    return pToReturn;
+};
+const getPatientsNoSsn = (): Omit<Patient, 'ssn' | 'entries'>[] => {
     return patients.map( ({id, name, dateOfBirth, gender, occupation}) => ({
         id,
         name,
@@ -23,6 +32,7 @@ const getPatientsNoSsn = (): Omit<Patient, 'ssn'>[] => {
 const addPatient = (obj: NewPatient): Patient => {
     const newPatient:Patient = {
         ...obj,
+        entries: [],
         id: uuid()
     };
     patients.push(newPatient);
@@ -32,5 +42,6 @@ const addPatient = (obj: NewPatient): Patient => {
 export default {
     getPatients,
     getPatientsNoSsn,
-    addPatient
+    addPatient,
+    findPatient
 };
